@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>Welcome to Currency Exchange Portal</head>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="js/script.js"></script>
+<body>
+<div style="margin: 100px;">
+	<form action="javascript:fnCalculate()" id="exchangeForm">
+		<label for="amount" id="amountLabel">Enter amount in Rupees:</label>
+		<input type="number" id="amount" required="required" style="height: 40px;" onkeyup="fnCalculate()">
+		
+		<label for="exchange" id="exchangeLabel">Select Conversion Currency</label>
+		<select required="required" onchange="fnGetRate()" id="selectCurrency">
+			<option value="null" selected="selected">--select--</option>
+			<option value="dollar" >Dollar  </option>
+			<option value="euro">Euro</option>
+		</select>
+		
+		<label for="rate" id="rateLabel">Exchange rate:</label>
+		<input type="text" id="rate" readonly="readonly" style="height: 40px;">
+		
+		<label for="result" id="resultLabel">Result:</label>
+		<input type="text" id="result" style="height: 40px; color: green;" readonly="readonly" >
+		
+		<input type="submit" value="Convert">
+	</form>
+</div>
+</body>
+</html>
