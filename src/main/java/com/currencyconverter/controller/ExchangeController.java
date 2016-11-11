@@ -10,24 +10,24 @@ import com.currencyconverter.service.BusinessServiceImpl;
 public class ExchangeController {
 	
 	@Autowired
-	private BusinessServiceImpl businessServiceImpl;
+	private BusinessServiceImpl businessServiceImplObj;
 
 	@RequestMapping("/getExchangeByCurrency")
 	@ResponseBody
-	public String getExchange(String currency) {
-			return businessServiceImpl.getExchangeRate(currency);
+	public String getExchangeRateByCurrency(String currency) {
+			return businessServiceImplObj.getExchangeRateByCurrency(currency);
 	}
 
 	@RequestMapping("/getValue")
 	@ResponseBody
-	public String getValue(double rate, double amount) {
-		return businessServiceImpl.getResultValue(rate, amount);
+	public String getConvertedValueFromRateAndAmount(double rate, double amount) {
+		return businessServiceImplObj.getResultValueFromRateAndAmount(rate, amount);
 	}
 
 	@RequestMapping("/getValueById")
 	@ResponseBody
-	public String getValueByCurrency(String currency, double amount) {
-		return businessServiceImpl.getResultValueByCurrency(currency, amount);
+	public String getConvertedValueFromCurrencyAndAmount(String currency, double amount) {
+		return businessServiceImplObj.getConvertedValueFromCurrencyAndAmount(currency, amount);
 	}
 
 }

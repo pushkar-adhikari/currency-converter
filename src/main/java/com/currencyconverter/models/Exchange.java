@@ -19,7 +19,7 @@ public class Exchange {
 	private String currency;
 
 	@NotNull
-	private String rate;
+	private String exchangeRateAsString;
 
 	// Constructors
 
@@ -30,9 +30,9 @@ public class Exchange {
 		this.currency = currency;
 	}
 
-	public Exchange(String currency, String rate) {
+	public Exchange(String currency, String exchangeRate) {
 		this.currency = currency;
-		this.rate = rate;
+		this.exchangeRateAsString = exchangeRate;
 	}
 
 	// Getter & Setter
@@ -54,11 +54,11 @@ public class Exchange {
 	}
 
 	public String getRate() {
-		return rate;
+		return exchangeRateAsString;
 	}
 
-	public void setRate(String rate) {
-		this.rate = rate;
+	public void setRate(String exchangeRateAsString) {
+		this.exchangeRateAsString = exchangeRateAsString;
 	}
 
 }
