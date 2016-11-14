@@ -1,4 +1,4 @@
-	function fnGetRate() {
+	function getRate() {
 		var rateId = document.getElementById("selectCurrency").value;
 		var httpRequest = new XMLHttpRequest();
 		var URL = "value?currency=" + rateId;
@@ -13,7 +13,7 @@
 		httpRequest.send(null);
 	}
 
-	function fnCalculate() {
+	function calculate() {
 		var rate = document.getElementById("rate").value;
 		if (rate == "") {
 			alert("Please Select Conversion Currency");
