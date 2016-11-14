@@ -1,7 +1,7 @@
 	function fnGetRate() {
 		var rateId = document.getElementById("selectCurrency").value;
 		var httpRequest = new XMLHttpRequest();
-		var URL = "getExchangeByCurrency?currency=" + rateId;
+		var URL = "value?currency=" + rateId;
 		httpRequest.onreadystatechange = function() {
 			if (httpRequest.readyState == 4 && httpRequest.status == 200) {
 				document.getElementById("rate").value = httpRequest.responseText;
