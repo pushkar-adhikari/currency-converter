@@ -6,7 +6,7 @@
 <div style="margin: 100px;">
 	<form action="javascript:calculate()" id="exchangeForm">
 		<label for="amount" id="amountLabel">Enter amount in Rupees:</label>
-		<input type="number" id="amount" required="required" style="height: 40px;" onkeyup="fnCalculate()">
+		<input type="number" id="amount" required="required" style="height: 40px;" onkeyup="calculate()">
 		
 		<label for="exchange" id="exchangeLabel">Select Conversion Currency</label>
 		<select required="required" onchange="getRate()" id="selectCurrency">
