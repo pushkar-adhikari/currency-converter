@@ -2,6 +2,7 @@ package com.currencyconverter.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.currencyconverter.service.BusinessServiceImpl;
@@ -10,24 +11,24 @@ import com.currencyconverter.service.BusinessServiceImpl;
 public class ExchangeController {
 	
 	@Autowired
-	private BusinessServiceImpl businessServiceImplObj;
+	private BusinessServiceImpl businessServiceObj;
 
-	@RequestMapping("/getExchangeByCurrency")
+	@RequestMapping("/exchange")
 	@ResponseBody
 	public String getExchangeRateByCurrency(String currency) {
-			return businessServiceImplObj.getExchangeRateByCurrency(currency);
+			return businessServiceObj.getExchangeRateByCurrency(currency);
 	}
 
-	@RequestMapping("/getValue")
+	@RequestMapping("/value")
 	@ResponseBody
 	public String getConvertedValueFromRateAndAmount(double rate, double amount) {
-		return businessServiceImplObj.getResultValueFromRateAndAmount(rate, amount);
+		return businessServiceObj.getResultValueFromRateAndAmount(rate, amount);
 	}
 
-	@RequestMapping("/getValueById")
+	@RequestMapping("/value")
 	@ResponseBody
-	public String getConvertedValueFromCurrencyAndAmount(String currency, double amount) {
-		return businessServiceImplObj.getConvertedValueFromCurrencyAndAmount(currency, amount);
+	public String getConvertedValueFromCurrencyAndAmount(@RequestParam("currency") String currency, double amount) {
+		return businessServiceObj.getConvertedValueFromCurrencyAndAmount(currency, amount);
 	}
 
 }
