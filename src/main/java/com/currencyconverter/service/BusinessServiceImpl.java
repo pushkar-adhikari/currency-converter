@@ -13,22 +13,22 @@ public class BusinessServiceImpl implements BusinessService {
 	private ExchangeDAO exchangeDAO;
 
 	@Override
-	public String getExchangeRate(String currency) {
+	public String getExchangeRateByCurrency(String currency) {
 		Exchange exchange = exchangeDAO.findExchangeByCurrency(currency);
 		return exchange.getRate();
 	}
 
 	@Override
-	public String getResultValue(double rate, double amount) {
+	public String getResultValueFromRateAndAmount(double rate, double amount) {
 		double value = rate * amount;
 		return String.valueOf(value);
 	}
 
 	@Override
-	public String getResultValueByCurrency(String currency, double amount) {
-		String rateAsString = getExchangeRate(currency);
+	public String getConvertedValueFromCurrencyAndAmount(String currency, double amount) {
+		String rateAsString = getExchangeRateByCurrency(currency);
 		double rateAsDouble = Double.valueOf(rateAsString);
-		return getResultValue(rateAsDouble, amount);
+		return getResultValueFromRateAndAmount(rateAsDouble, amount);
 	}
 
 }

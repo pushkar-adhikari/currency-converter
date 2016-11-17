@@ -30,9 +30,9 @@ public class Exchange {
 		this.currency = currency;
 	}
 
-	public Exchange(String currency, String rate) {
+	public Exchange(String currency, String exchangeRate) {
 		this.currency = currency;
-		this.rate = rate;
+		this.rate = exchangeRate;
 	}
 
 	// Getter & Setter
